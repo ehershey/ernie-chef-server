@@ -1,0 +1,33 @@
+{
+  "name": "chef-server",
+  "description": "Ernie Chef Server",
+  "chef-server": {
+    "accept_license": true,
+    "addons": [
+      "manage"
+    ]
+  },
+  "private-chef": {
+    "nginx": {
+      "ssl_duration": 365
+    }
+  },
+  "mcs": {
+    "org": {
+      "name": "ernie",
+      "full_name": "Ernie Org"
+    },
+    "managed_user": {
+      "email": "chef-managed-user@ernie.org"
+    },
+    "skip_test": false
+  },
+  "run_list": [
+    "recipe[ernie::chef-server]"
+  ],
+  "run_list_real": [
+    "recipe[ernie::chef-server]",
+    "recipe[managed-chef-server::default]",
+    "recipe[chef-server::addons]"
+  ]
+}
