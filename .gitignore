@@ -7,3 +7,7 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
+
+chef-repo-ernie/
+chef_guid
+local-mode-cache/
